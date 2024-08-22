@@ -1,0 +1,9 @@
+read_verilog in.v
+
+prep
+techmap; opt
+dfflibmap -liberty circuitsim.lib
+abc -liberty circuitsim.lib; opt
+
+write_json out.json
+stat
